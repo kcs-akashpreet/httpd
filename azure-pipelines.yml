@@ -38,8 +38,9 @@ stages:
         tags: httpd
     - task: Kubernetes@1
       inputs:
-       connectionType: 'Kubernetes Service Connection'
-       kubernetesServiceEndpoint: 'k8s'
-       command: 'apply'
-       secretType: 'dockerRegistry'
-       containerRegistryType: 'Azure Container Registry'
+        connectionType: 'Kubernetes Service Connection'
+        kubernetesServiceEndpoint: 'k8s'
+        command: 'apply'
+        arguments: '-f deployment.yml'
+        secretType: 'dockerRegistry'
+        containerRegistryType: 'Azure Container Registry'
