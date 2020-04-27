@@ -25,6 +25,8 @@ stages:
       inputs:
         command: build
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
-        tags: akashkcs/httpd
+        tags: tsttst.azurecr.io/httpd
           $(tag)
+
+
 
