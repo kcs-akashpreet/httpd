@@ -35,8 +35,7 @@ stages:
         repository: $(imageRepository)
         dockerfile: $(dockerfilePath)
         containerRegistry: $(dockerRegistryServiceConnection)
-        tags: |
-          $(tag)
+        tags: $(httpd)
     - task: Kubernetes@1
       inputs:
        connectionType: 'Kubernetes Service Connection'
