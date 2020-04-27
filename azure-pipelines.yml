@@ -37,3 +37,10 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
+    - task: Kubernetes@1
+      inputs:
+       connectionType: 'Kubernetes Service Connection'
+       kubernetesServiceEndpoint: 'k8s'
+       command: 'apply'
+       secretType: 'dockerRegistry'
+       containerRegistryType: 'Azure Container Registry'
