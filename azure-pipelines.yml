@@ -35,5 +35,5 @@ stages:
         repository: $(imageRepository)
         dockerfile: $(dockerfilePath)
         containerRegistry: $(dockerRegistryServiceConnection)
-        tags: httpd
+        tags: tsttst.azurecr.io/httpd
           $(tag)
