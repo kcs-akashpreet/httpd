@@ -29,6 +29,6 @@ spec:
     spec:
       containers:
       - name: httpd
-        image: tsttst.azurecr.io/httpd:#{user}#
+        image: tsttst.azurecr.io/httpd
         ports:
         - containerPort: 80
