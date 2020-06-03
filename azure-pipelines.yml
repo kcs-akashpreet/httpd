@@ -55,16 +55,6 @@ stages:
       inputs:
         connectionType: 'Kubernetes Service Connection'
         kubernetesServiceEndpoint: 'k8scluster'
-        command: apply
-        arguments: '-f service.yml'
-        secretType: 'dockerRegistry'
-        containerRegistryType: 'Azure Container Registry'
-
-
-    - task: Kubernetes@1
-      inputs:
-        connectionType: 'Kubernetes Service Connection'
-        kubernetesServiceEndpoint: 'k8scluster'
         command: 'apply'
         arguments: '-f deployment.yml'
         secretType: 'dockerRegistry'
