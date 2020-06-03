@@ -50,6 +50,16 @@ stages:
         useLegacyPattern: false
         enableTelemetry: true
 
+
+    - task: Kubernetes@1
+      inputs:
+        connectionType: 'Kubernetes Service Connection'
+        kubernetesServiceEndpoint: 'k8scluster'
+        command: 'delete'
+        arguments: '-f service.yml'
+        secretType: 'dockerRegistry'
+        containerRegistryType: 'Azure Container Registry'
+
     - task: Kubernetes@1
       inputs:
         connectionType: 'Kubernetes Service Connection'
