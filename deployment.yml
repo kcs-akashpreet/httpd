@@ -17,3 +17,19 @@ spec:
         - containerPort: 80
       imagePullSecrets:
         - name: acr-secret
+        ---
+apiVersion: v1
+kind: Service
+metadata:
+  name: httpd-deployment
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+  #selector:
+    #run: httpd-deployment
+  selector:
+    app: httpd-deployment
+  selector:
+    app: httpd-deployment
+  type: LoadBalancer
