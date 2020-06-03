@@ -55,28 +55,7 @@ stages:
       inputs:
         connectionType: 'Kubernetes Service Connection'
         kubernetesServiceEndpoint: 'k8scluster'
-        command: 'delete'
-        arguments: '-f service.yml'
-        secretType: 'dockerRegistry'
-        containerRegistryType: 'Azure Container Registry'
-    - task: replacetokens@3
-      inputs:
-        targetFiles: 'deployment.yml'
-        encoding: 'auto'
-        writeBOM: true
-        actionOnMissing: 'warn'
-        keepToken: false
-        tokenPrefix: '#{'
-        tokenSuffix: '}#'
-        useLegacyPattern: false
-        enableTelemetry: true
-
-
-    - task: Kubernetes@1
-      inputs:
-        connectionType: 'Kubernetes Service Connection'
-        kubernetesServiceEndpoint: 'k8scluster'
-        command: 'delete'
+        command: apply
         arguments: '-f service.yml'
         secretType: 'dockerRegistry'
         containerRegistryType: 'Azure Container Registry'
