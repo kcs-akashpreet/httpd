@@ -15,3 +15,5 @@ spec:
         image: tsttst.azurecr.io/httpd
         ports:
         - containerPort: 80
+      imagePullSecrets:
+        - name: acr-secret
