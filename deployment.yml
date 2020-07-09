@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
       - name: httpd
-        image: k8sdemoregistory.azurecr.io/kcsakashpreethttpd:#{tag}#
+        image: k8sdemoregistory.azurecr.io/kcsakashpreethttpd:httpd
         ports:
         - containerPort: 80
       imagePullSecrets:
