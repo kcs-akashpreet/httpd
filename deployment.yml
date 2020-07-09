@@ -7,17 +7,19 @@ spec:
   replicas: 2
   selector:
     matchLabels:
-      name: httpd-deployment  
+      name: httpd-deployment
   template:
     metadata:
       labels:
-        app: httpd-deployment 
+        name: httpd-deployment
     spec:
       containers:
-      - name: httpd
-        image: k8sdemoregistory.azurecr.io/kcsakashpreethttpd:httpd
-        ports:
-        - containerPort: 80
+        - name: httpd-deployment
+          image: k8sdemoregistory.azurecr.io/httpd:latest
+          imagePullPolicy: Always
+          name: httpd-deployment
+          ports:
+          - containerPort: 8083
       imagePullSecrets:
         - name: acr-secret
 ---
@@ -27,8 +29,9 @@ metadata:
   name: httpd-deployment
 spec:
   ports:
-  - port: 80
-    protocol: TCP
+  - protocol: TCP  
+    port: 80
+    targetPort: 8083
   selector:
     name: httpd-deployment
   type: LoadBalancer
