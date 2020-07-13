@@ -14,7 +14,7 @@ variables:
   imageRepository: 'kcsakashpreethttpd'
   containerRegistry: 'k8sdemoregistory.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
-  tag: '$(Build.BuildId)'
+  tag: 'httpd'
   
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
