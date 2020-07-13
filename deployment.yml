@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: httpd-deployment
-          image: k8sdemoregistory.azurecr.io/httpd:latest
+          image: k8sdemoregistory.azurecr.io/kcsakashpreethttpd
           imagePullPolicy: Always
           name: httpd-deployment
           ports:
